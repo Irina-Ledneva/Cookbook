@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title_h1 %}Категории рецептов{% endblock title_h1 %}
+{% block content %}
+<ul>
+    {% for category in categories %}
+    <li>
+        <h2><a href="{% url 'category_recipes' category.id %}">{{ category.category_name }}</a></h2>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock content %}
+
+

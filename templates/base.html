@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Кулинарная книга</title>
+    <p>Дата посещения - {% now 'j/m/Y' %}</p>
+    <p>Время посещения - {% now 'H:i:s' %}</p>
+
+</head>
+<body>
+<nav>
+    <div><h3><a href="/">Главная</a> | <a href="/categories">Категории</a> | <a href="/recipes">Лучшие рецепты недели</a> | <a href="/add_recipe">Добавить рецепт</a> | <a href="/all_recipes">Все рецепты</a></h3></div>
+     <div><img src="{% static 'images/chef.png' %}" width="300px"></div>
+</nav>
+<h1>{% block title_h1 %}{% endblock title_h1 %}</h1>
+<div>{% block content %}{% endblock content %}</div>
+<div>{% block data %}{% endblock data %}</div>
+
+<footer>
+    <div>Ira28-the chef. 2024. All rights reserved.</div>
+</footer>
+</body>
+</html>
+

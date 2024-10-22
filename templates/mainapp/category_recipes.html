@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title_h1 %}Рецепты в выбранной Вами категории{% endblock title_h1 %}
+{% block content %}
+<ul>
+    {% for recipe in recipes %}
+    <li>
+        <h2><a href="{% url 'one_recipe' recipe.id %}">{{ recipe.recipe_name }}</a></h2><p>{{ recipe.recipe_description }}</p>
+        {% if recipe.food_image %}
+        <p><img src="{{recipe.food_image.url}}" alt="Изображение блюда" width="300"></p>
+        {% endif %}
+        {% if not forloop.last %}
+        <hr>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock content %}
+

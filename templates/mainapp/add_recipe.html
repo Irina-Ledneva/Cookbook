@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title_h1 %}Добавить свой рецепт{% endblock title_h1 %}
+{% block content %}
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p>
+        <button type="submit">Сохранить рецепт</button>
+    </p>
+</form>
+<h3>Если вы не нашли нужную категорию, то <a href="{% url 'add_category' %}">создайте свою</a></h3>
+{% endblock content %}
+
